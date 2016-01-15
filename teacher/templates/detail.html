@@ -1,0 +1,23 @@
+﻿<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>详细信息</title>
+</head>
+<body>
+<p><strong>“{{detail.name}}”</strong><strong>详细信息</strong></p>
+<p>姓名：{{detail.name}}</p>
+<p>生日：{{detail.birth|date:"Y-m-d"}}</p>
+<p>院系：{{detail.faculty}}</p>
+<p>研究方向：{{detail.research}}</p>
+
+<a href="http://www.baidu.com">查看教师其他信息（链接到哈工大教师搜索结果）</a>
+<p>&nbsp</p>
+<p><a href="../../order/{{detail.id}}"> 预约该教师</a></p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+<p>您可以：</p>
+<p>1. <a href="../../..">返回主页</a></p>
+<p>2. <a href="http://127.0.0.1:8000/table/">查看教师列表</a></p>
+
+</body>
+</html>

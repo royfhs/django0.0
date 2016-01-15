@@ -1,0 +1,18 @@
+﻿{% if teacher_list %}
+	<ul>
+		<br>
+		教师列表：</br>
+		{% for a in teacher_list %}
+			<li><a href= "/detail/{{a.id}}/">{{a.name}}</a></li>
+		{% endfor %}
+	</ul>
+	{% else %}
+	<p>请添加教师。</p>
+{% endif %}
+
+<p>&nbsp</p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+<p>您可以：</p>
+<p>1. <a href="../main">返回主页</a></p>
+<p>2. <a href="../table/">查看教师列表</a></p>

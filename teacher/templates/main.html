@@ -1,0 +1,42 @@
+﻿<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>欢迎来到教师信息管理系统</title>
+</head>
+
+<body>
+  <div align="center">欢迎来到教师信息管理系统！</div>
+  <div align="center">
+    {% if errors %}
+      {% for error in errors %}  
+       <p style="color: red;">  
+          Please correct the error: {{error}}.  
+       </p>  
+      {% endfor %} 
+    {% endif %}
+    <table width="622" border="1">
+      <tr>
+        <th width="200" scope="col"><div align="center">教师日历</div></th>
+        <th width="200" scope="col"><div align="center">教师推荐</div></th>
+        <th width="200" scope="col"><div align="center">教师预约</div></th>
+      </tr>
+    </table>
+  </div>
+  <p align="center">&nbsp;</p>
+  <a href="http://127.0.0.1:8000/table">教师列表</a>
+ 	<p>
+    教师检索：
+    <form action="/search/" method="get">
+        <input type="text" name="q">
+    	 <input type="submit"  value="搜索"> 
+    </form>
+  </p>
+  <p>
+    教师推荐(选择你感兴趣的研究方向)：
+    <form action="/recommend/" method="get">
+      <input type="text" name="falcuty">
+      <input type="submit" value="搜索">
+    </form>
+  </p>
+  <a href="../logout">登出</a>
+</body>
+</html>
