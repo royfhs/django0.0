@@ -1,0 +1,40 @@
+﻿<title>预约详细信息</title>
+<div align="center" z-index:999><img src="../static/favicon.png"/ align="center"></div> 
+<meta http-equiv="Content-Type" content="text/html" />
+<link rel="stylesheet" href="../../static/documentation.css" type="text/css" />
+<script type="text/javascript" src="../../static/jquery-1.10.2.min.js"></script>
+<script src="../gg_bd_ad_720x90-2.js" type="text/javascript"></script>
+<script src="../follow.js" type="text/javascript"></script>
+<script type="text/javascript">
+function success()
+{
+
+alert("操作成功！已经将预约加入您的日程。");
+}
+</script>
+
+<script type="text/javascript">
+function cancel()
+{
+alert("操作成功！已经取消该学生预约。");
+}
+</script>
+
+<body bgcolor="D6E4FF">
+<p>您好，{{b.Name}}老师。</p>
+<p>学号：{{a.Number}}</p>
+<p>预约日期：{{a.Appointdate}}</p>
+<p>预约时间：{{a.Appointtime}}</p>
+<p>预约当前状态：{{a.State}}</p>
+<p>备注：{{a.Urgent}}</p>
+<p></p>
+<p></p>
+<form action="" method= "post">
+	{% csrf_token %}
+	<p>
+		<input type="submit" name="operate" onclick="success()" value="接受预约"/> &nbsp;&nbsp;
+		<input type="submit" name="operate" onclick="cancel()" value="取消预约"/>
+	</p>
+</form>
+</body>
+</html>

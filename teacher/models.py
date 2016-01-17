@@ -22,7 +22,7 @@ class event(models.Model):
 
 class appoint(models.Model):
 	t_id = models.ForeignKey(teacher)
-	appointID = models.IntegerField(primary_key=True)
+	appointID = models.IntegerField(primary_key=True, default = '1')
 	Appointdate = models.CharField(max_length = 10)
 	Appointtime = models.CharField(max_length = 5)
 	Number = models.CharField(max_length = 10)

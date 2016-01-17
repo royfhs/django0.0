@@ -1,0 +1,80 @@
+body {
+    padding: 0;
+    margin:0;
+    font: 13px 'Helvetica Neue', Arial;
+    background: url(../static/homebg.jpg);
+    background-color: #D6E4FF;
+    line-height: 22px;
+    font-family : 微软雅黑;
+    font-size : 1.5em;
+    color : #66666A;
+
+a.btn-big1{height:35px;line-height:35px;font-size:15px;padding:0 20px;}
+
+.login-btn{display:block;background:url(../static/bg.png) repeat-x left top;width:330px;text-align:center;height:35px;line-height:35px;color:white;font-
+size:16px;border-radius:3px;border:1px solid #215A8D;}
+
+
+article {
+    padding: 20px;
+}
+article section {
+    width: 900px;
+    margin: auto;
+}
+article textarea {
+    display: block;
+    
+    width: 100%;
+    margin: 0 0 20px 0;
+    padding: 20px 0;
+    outline: none;
+    font: 13px 'Consolas', 'Georgia', 'Helvetica Neue', Arial;
+    resize: none;
+    border-radius: 4px;
+    border: 1px solid #a9a9a9;
+}
+article hr {
+    background-color: ##D6E4FF;
+    height:1px;
+    width: 100%;
+    display:inline-block;
+    margin:30px 0;
+    border: none;
+}
+article h1 {
+    font: bold 28px 'Helvetice Neue', Arial; 
+}
+p.desc {
+    font: 14px 'Helvetica Neue', Arial;
+    text-align: center;
+    line-height: 26px;
+    background-color:#fff;
+    border-top:1px solid ##D6E4FF;
+    border-bottom:1px solid ##D6E4FF
+    padding:20px 0;
+}
+a.download {
+    padding: 10px 20px;
+    background: #1997d8;
+    color: #fff;
+    text-shadow:0 1px 1px #000;
+    border-radius:30px;
+    text-decoration:none;
+    font:bold 16px 'Helvetica Neue', Arial;
+    display:inline-block;
+    margin:10px 0 0 0;
+    box-shadow:inset 0 -10px 20px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.8);
+    border:1px solid #1997d8;
+    transition:all .4s;
+    -moz-transition:all .4s;
+    -webkit-transition:all .4s;
+}
+a.download:hover {
+    box-shadow:inset 0 -10px 20px rgba(0,0,0,0.2), 0 1px 10px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.8);
+}
+strong {
+    font:bold 16px 'Helvetica Neue', Arial;
+    display:block;
+    
+}

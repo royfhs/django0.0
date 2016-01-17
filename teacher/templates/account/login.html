@@ -1,31 +1,66 @@
-<!DOCTYPE html>  
-<html>  
-<head>  
-    <title>Welcome login </title>  
-</head>  
-<body>  
-    <p>Account Login </p>  
-  
-    {% if errors %}  
-        <li>  
-            {% for error in errors %}  
-             <p style="color: red;">  
-                Please correct the error: {{error}} below.  
-             </p>  
-              {% endfor %}  
-        </li>  
-    {% endif %}  
-  
-    <form action="" method="post"> 
-        {% csrf_token %} 
-        <input type = 'text' placeholder="Please input account" name="account">  
-       <br>  
-  
-        <input type = 'password' placeholder="Please input password" name="password">  
-        <br>  
-        <input type = 'submit' placeholder="Login" value="登录">  
-        <br>  
-        <a href="../student_register">学生注册</a> 
-    </form>  
-</body>  
-</html>  
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+<title>欢迎来到预约管理系统</title>
+<p></p>
+<p></p>
+<div align="center" z-index:999><img src="../../static/favicon.png"/ align="center"></div> 
+<link href="../../static/style_login.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../static/jquery.js"></script>
+<script type="text/javascript" src="../../static/jquery.i18n.properties-1.0.9.js" ></script>
+<script type="text/javascript" src="../../static/jquery-ui-1.10.3.custom.js"></script>
+<script type="text/javascript" src="../../static/jquery.validate.js"></script>
+<script type="text/javascript" src="../../static/md5.js"></script>
+<script type="text/javascript" src="../../static/page_login.js?lang=zh"></script>
+<script src="../../static/html5.js"></script>
+
+	<script src="../../static/DD_belatedPNG_0.0.8a-min.js" language="javascript"></script>
+	<script>
+	  DD_belatedPNG.fix('div,li,a,h3,span,img,.png_bg,ul,input,dd,dt');
+	</script>
+</head>
+<body class="loginbody">
+<div class="dataEye">
+	<div class="loginbox">
+		<div class="logo-a" align="center">
+			<img src="../../static/favicon.png"/ align="center">
+		</div>
+		<div class="login-content">
+			<div class="loginbox-title">
+				<h3>登录</h3>
+			</div>
+			<form id="signupForm" ction="" method="post">
+				{% csrf_token %}
+			<div class="login-error"></div>
+			<div class="row">
+				<label class="field"></label>
+				<input type='text' placeholder="用户名" class="input-text-user input-click" name="account" id="account">
+			</div>
+			<div class="row">
+				<label class="field"></label>
+				<input type='password' placeholder="密码" class="input-text-password input-click" name="password" id="password">
+			</div>
+			<div class="row btnArea">
+				<input type='submit' class="login-btn" value ="登录">
+			</div>
+			</form>
+		</div>
+		<div class="go-regist">
+			还没有账号？请
+			<a href="../student_register/">立即注册</a>
+		</div>
+	</div>
+<div id="footer">
+	<div class="dblock">
+		<div class="inline-block"></div>
+		<div class="inline-block copyright">
+			<div align="center"><p> Copyright © 2015 8RA</p></div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

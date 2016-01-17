@@ -31,5 +31,7 @@ urlpatterns = [
     url(r'^update/$', update),
 
     url(r'^index/$', index),
-    url(r'^all/(?P<TeacherID>[0-9]+)/$', aplist),
+    url(r'^all/$', aplist),
+    url(r'^all/(?P<appointID>[0-9]+)/$', ap_detail),
+
 ]

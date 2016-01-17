@@ -14,7 +14,17 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+import os.path
+import sae.const
+from os import environ
+debug = not environ.get("m1", "")
 
+MYSQL_DB = sae.const.MYSQL_DB   
+MYSQL_USER = sae.const.MYSQL_USER   
+MYSQL_PASS = sae.const.MYSQL_PASS   
+MYSQL_HOST_M = sae.const.MYSQL_HOST   
+MYSQL_HOST_S = sae.const.MYSQL_HOST_S   
+MYSQL_PORT = sae.const.MYSQL_PORT 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -23,9 +33,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'g=82ypqxq!6%q_5_(n3_g#gks6cnfn-dl9xsv)86r-8ixf6g6p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -71,18 +81,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'm1.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'm1',
-        'USER': 'root', 
-        'PASSWORD':'123456',
-        'HOST':'',
-        'PORT':'',
+        'NAME': MYSQL_DB,
+        'USER': MYSQL_USER, 
+        'PASSWORD': MYSQL_PASS,
+        'HOST': MYSQL_HOST_M,
+        'PORT': MYSQL_PORT,
     }
 }
 
@@ -105,8 +114,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, '/teacher/static/')
+STATIC_ROOT = 'static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "/teacher/static/"),
+    os.path.join(BASE_DIR, "common_static"),
 )

@@ -1,58 +1,74 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome Register New Account</title>
+<title>学生注册</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<link href="../../static/style_register.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../static/jquery.js"></script>
+<script type="text/javascript" src="../../static/jquery.i18n.properties-1.0.9.js" ></script>
+<script type="text/javascript" src="../../static/jquery-ui-1.10.3.custom.js"></script>
+<script type="text/javascript" src="../../static/jquery.validate.js"></script>
+<script type="text/javascript" src="../../static/md5.js"></script>
+<script type="text/javascript" src="../../static/page_regist.js?lang=zh"></script>
+<!--[if IE]>
+  <script src="../../static/html5.js"></script>
+<![endif]-->
+<!--[if lte IE 6]>
+	<script src="../../static/DD_belatedPNG_0.0.8a-min.js" language="javascript"></script>
+	<script>
+	  DD_belatedPNG.fix('div,li,a,h3,span,img,.png_bg,ul,input,dd,dt');
+	</script>
+<![endif]-->
 </head>
-<body>
- {% if errors %}
-        <li>
-            {% for error in errors %}
-             <p style="color: red;">
-                Please correct the error: {{error}} below.
-             </p>
-            {% endfor %}
-        </li>
-{% endif %}
-<table>
-    <form action="" method="post">
-        {% csrf_token %}
-        <tr>
-            <td>
-                <label >Account:</label>
-            </td>
-            <td>
-                <input type = 'text' placeholder="Please input account" name = 'account'>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label >Password:</label>
-            </td>
-            <td>
-              <input type = 'password' placeholder="Please input password" name = 'password'>
-            </td>
-        </tr>
-         <tr>
-             <td>
-                <label >Password:</label>
-             </td>
-             <td>
-                 <input type = 'password' placeholder="Please input password" name ='password2'>
-             </td>
-         </tr>
-         <tr>
-             <td>
-                 <label>email:</label>
-             </td>
-             <td>
-                 <input type="email" placeholder="Please input email" name = 'email'>
-             </td>
-         </tr>
-          <tr>
-              <td>
-                   <input type = 'submit' placeholder="Login" value="Register">
-              </td>
-          </tr>
-    </form>
-</table>
+<body class="loginbody">
+<div class="dataEye">
+	<div class="loginbox registbox">
+		
+		<div class="login-content reg-content">
+			<div class="loginbox-title">
+				<h3>注册</h3>
+			</div>
+			<form action="" method="post" id="signupForm">
+				{%csrf_token%}
+			<div class="login-error"></div>
+			<div class="row">
+				<label class="field" for="account">用户名/学号</label>
+				<input type='text' value="" class="input-text-user noPic input-click" name='account' id="account">
+			</div>
+			<div class="row">
+				<label class="field" for="password">密码</label>
+				<input type="password" value="" class="input-text-password noPic input-click" name="password" id="password">
+			</div>
+			<div class="row">
+				<label class="field" for="password2">确认密码</label>
+				<input type="password" value="" class="input-text-password noPic input-click" name="password2" id="password2">
+			</div>
+			<div class="row">
+				<label class="field" for="email">邮箱</label>
+				<input type="email" value="" class="input-text-user noPic input-click" name="email" id="email">
+			</div>
+			<div class="row btnArea">
+				<input type="submit" class="login-btn" value="注册"></a>
+			</div>
+			</form>
+		</div>
+		<div class="go-regist">
+			已有帐号,请<a href="../" class="link">登录</a>
+		</div>
+	</div>
+	
+<div id="footer">
+	<div class="dblock">
+		<div class="inline-block"></div>
+		<div class="inline-block copyright">
+			<div align="center"><p> Copyright © 2015 8RA</p></div>
+		</div>
+	</div>
+</div>
+<div class="loading">
+	
+</div>
 </body>
 </html>
+

@@ -1,9 +1,16 @@
 ﻿<head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../../static/documentation.css" type="text/css" />
+
+<div align="center" z-index:999><img src="../../static/favicon.png"/></div> 
+<script type="text/javascript" src="../../static/jquery-1.10.2.min.js"></script><script type="text/javascript">
+<script src="../gg_bd_ad_720x90-2.js" type="text/javascript"></script>
+<script src="../follow.js" type="text/javascript"></script>
+<script type="text/javascript"></script>
 <title>欢迎来到教师信息管理系统</title>
 </head>
 
-<body>
+<body bgcolor="D6E4FF">
   <div align="center">欢迎来到教师信息管理系统！</div>
   <div align="center">
     {% if errors %}
@@ -13,30 +20,23 @@
        </p>  
       {% endfor %} 
     {% endif %}
-    <table width="622" border="1">
-      <tr>
-        <th width="200" scope="col"><div align="center">教师日历</div></th>
-        <th width="200" scope="col"><div align="center">教师推荐</div></th>
-        <th width="200" scope="col"><div align="center">教师预约</div></th>
-      </tr>
-    </table>
   </div>
-  <p align="center">&nbsp;</p>
-  <a href="http://127.0.0.1:8000/table">教师列表</a>
+  <p align="right">你目前以{{s.username}}身份登录,<a href="../logout">(登出)</a>&nbsp;</p>
+  &nbsp;<a href="/table">教师列表</a>
  	<p>
-    教师检索：
+    &nbsp;教师检索：
     <form action="/search/" method="get">
-        <input type="text" name="q">
-    	 <input type="submit"  value="搜索"> 
+      &nbsp;<input type="text" name="q">
+    	&nbsp;<input type="submit"  value="搜索"> 
     </form>
   </p>
   <p>
-    教师推荐(选择你感兴趣的研究方向)：
+    &nbsp;教师推荐(输入你感兴趣的研究方向)：
     <form action="/recommend/" method="get">
-      <input type="text" name="falcuty">
-      <input type="submit" value="搜索">
+      &nbsp;<input type="text" name="falcuty">
+      &nbsp;<input type="submit" value="搜索">
     </form>
   </p>
-  <a href="../logout">登出</a>
+  
 </body>
 </html>

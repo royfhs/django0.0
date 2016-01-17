@@ -1,0 +1,41 @@
+﻿<title>全部预约信息</title>
+<meta http-equiv="Content-Type" content="text/html" />
+<div align="center" z-index:999><img src="../static/favicon.png"/ align="center"></div> 
+<link rel="stylesheet" href="../../static/documentation.css" type="text/css" />
+<script type="text/javascript" src="../../static/jquery-1.10.2.min.js"></script>
+<script src="../gg_bd_ad_720x90-2.js" type="text/javascript"></script>
+<script src="../follow.js" type="text/javascript"></script>
+<body bgcolor="D6E4FF">
+{% if tappointment %}
+	<ul>
+	<br>向您预约的学生列表：</br>
+	{% for a in tappointment %}
+
+		<li>学号：{{a.Number}}&nbsp;
+			预约日期：{{a.Appointdate}}&nbsp;
+			预约时间：{{a.Appointtime}}&nbsp;&nbsp;
+			预约当前状态：{{a.State}}&nbsp;&nbsp;
+			备注：{{a.Urgent}} &nbsp;&nbsp;
+			<a href= "/../../all/{{a.appointID}}/">对预约进行操作</a>
+		</li>&nbsp;&nbsp;&nbsp;
+	{% endfor %}
+	</ul>
+{% else %}
+	<h1 color :"#f00">还没有人向您预约。</h1>
+{% endif %}
+<p></p>
+<p></p>
+<p>教师日程添加：</p>
+<p>日期格式为“日/月/年”形式(例：2015年10月1日即为1/10/2015),具体时间请精确到分钟（例如15:31、8:00等）。</p>
+<form action="/all/" method="post">
+	{% csrf_token %}
+	<p>教师：{{Teacher.name}}</p>
+	<p>日期：<input type="text" name="Datadate"></p>
+	<p>时间：<input type="text" name="Datatime"></p>
+	<p>事件：<input type="text" name="Datatitle"></p>
+	<input type="submit"  value="添加事件"/ >
+
+
+<p><a href= "../../index/">返回上一页</a>
+</p>
+</body>
