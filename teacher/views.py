@@ -136,6 +136,7 @@ def student_register(request):
 			permission=Permission.objects.get(name='student')
 			user.user_permissions.add(permission)
 			user.save()
+			login(request,user)
 			return HttpResponseRedirect('../../')
 	return render_to_response('account/register.html', {'errors': errors}, context_instance=RequestContext(request))  
   
