@@ -1,9 +1,6 @@
 # -*- coding:utf-8 -*- 
 from django.db import models
 
-from django.contrib.auth.models import User, Permission
-from django.contrib.contenttypes.models import ContentType
-
 class teacher(models.Model):
 	t_id = models.PositiveIntegerField(default=0)
 	name= models.CharField(max_length=20)
